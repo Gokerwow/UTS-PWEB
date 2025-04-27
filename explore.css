@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container Utama */
+.explore-content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fafafa;
+    margin-left: 244px;
+    width: 100%;
+}
+
+/* Grid Layout */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3,  316.984px); /* 3 Kolom */
+    grid-auto-rows:  316.984px; /* Tinggi Default */
+    gap: 5px;
+    max-width: 935px; /* Lebar Maksimal Instagram */
+    width: 100%;
+    grid-auto-flow: dense; /* Isi Celah Kosong */
+    /* background-color: aqua; */
+}
+
+.line-top {
+    position: fixed;
+    height: 24px;
+    width: 100%;
+    background-color: #fafafa;
+    z-index: 90;
+}
+
+/* Grouping (Tanpa Mengacaukan Grid) */
+.feed-group {
+    display: contents; /* Anak-anak langsung masuk grid parent */
+}
+
+/* Gambar Panjang di Kanan */
+.right-group .span-2-rows {
+    grid-column: 3; /* Kolom Terakhir */
+}
+
+/* Gambar Panjang di Kiri */
+.left-group .span-2-rows {
+    grid-column: 1; /* Kolom Pertama */
+}
+
+/* Style Gambar */
+.img-wrapper-explore {
+    overflow: hidden;
+    /* border-radius: 8px; */
+    background-color: #eee; /* Warna Placeholder */
+}
+
+.img-wrapper-explore img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar Tidak Distorsi */
+}
+
+/* Gambar 2 Baris */
+.span-2-rows {
+    grid-row: span 2;
+}

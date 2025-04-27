@@ -80,6 +80,7 @@ body {
 
 .sidebar .IGLogo {
     padding: 20px 0;
+    margin-bottom: 25px;
     /* background-color: brown; */
 }
 
@@ -91,13 +92,14 @@ body {
     position: fixed;
     top: 0;
     flex-shrink: 0; /* Supaya sidebar nggak mengecil */
+    flex-grow: 0;
     padding: 20px;
     height: 100vh;
     width: 244px;
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(172, 170, 170, 0.247);
-    
+    z-index: 99;
     /* background-color: chartreuse; */
 }
 
@@ -119,7 +121,7 @@ a:visited {
     flex-direction: column;
     justify-content: space-between;
     /* background-color: aqua; */
-    height: 90%;
+    height: 100%;
 }
 
 .nav-icon {
@@ -127,7 +129,7 @@ a:visited {
     border-radius: 10px ;
 }
 
-.nav-icon .imgBG {
+.imgBG {
     width: 24px;
     height: 24px;
     /* background-color: aqua; */
@@ -136,6 +138,7 @@ a:visited {
     background-size: cover;
     border-radius: 50%;
 }
+
 
 .nav-icon:hover {
     background-color: #f2f2f2;
@@ -168,7 +171,7 @@ a:visited {
     justify-content: center;
     /* background-color: #fa7e1e; */
     overflow-y: auto; /* Hanya content yang scroll */
-    margin-left: 144px;
+    margin-left: 244px;
 }
 
 .content-wrapper {
@@ -371,4 +374,171 @@ a:visited {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.navbar-top {
+    display: none;
+}
+
+.navbar-bot {
+    display: none;
+}
+
+@media (max-width: 1265px) {
+    .scroll-wrapper {
+        margin-left: 72px;
+    }
+
+    .sidebar {
+        width: 72px;
+    }
+
+    .sidebar span {
+        display: none;
+    }
+
+    .nav-icon svg {
+        margin-right: 0; /* Memengaruhi semua SVG, termasuk logo */
+    }
+
+    .nav-icon {
+        padding: 0px;
+        margin-bottom: 24px;
+    }
+
+    .sidebar .IGLogo {
+        padding: 20px 0;
+        margin-bottom: 40px;
+        /* background-color: brown; */
+    }
+}
+
+@media (max-width: 1125px) {
+    .right-bar  {
+        display: none;
+    }
+}
+
+@media (max-width: 766px) {
+    .sidebar {
+        display: none;
+    }
+
+/* styles.css */
+.navbar-top {
+    position: fixed;
+    top: 0; left: 0; right: 0;    /* full-width tanpa overflow */
+    height: 60px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    width: 100%;
+  }
+  
+  /* Logo di kiri */
+  .IGLogoNAVBAR a {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-right {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Search box di tengah */
+  .search-container {
+    display: flex;
+    align-items: center;
+    background: #efefef;
+    border-radius: 8px;
+    padding: 6px 12px;
+    width: 240px;  /* sesuaikan lebar */
+  }
+  
+  .search-container svg {
+    margin-right: 8px;
+    color: #8e8e8e;
+  }
+  
+  .search-container input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  /* Heart icon di kanan */
+  .notification-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .navbar-bot {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;         /* center vertikal */
+    background: rgb(255, 255, 255);     
+    border-top: 1px solid #dbdbdb;
+    z-index: 101;
+  }
+  
+  /* wrapper opsional, atau bisa langsung .nav */
+  .nav-wrapper {
+    flex: 1;                     /* agar ul bisa full-width */
+  }
+  
+  /* ini nav yang mem‐posisikan ikon secara even */
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;         /* center icon di bar */
+    height: 100%;                /* isi 50px parent */
+  }
+
+  .imgBG {
+    width: 24px;
+    height: 24px;
+    /* background-color: aqua; */
+    background: url(assets/yunablonde.jpg);
+    background-position: top center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+  .navbar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ini yang utama */
+    padding: 12px;
+    /* border-radius: 10px ; */
+    height: 100%; /* Mengisi tinggi parent */
+    /* background-color: green; */
+}
+  
+  /* masing-masing ikon */
+  .navbar-icon a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar-icon svg {
+    /* styling icon, misal: */
+    /* background-color: #962fbf; */
+    width: 24px; height: 24px;
+  }
+  
+  .scroll-wrapper {
+    margin-top: 50px;
+    margin-left: 0;
+  }
 }
