@@ -1,0 +1,160 @@
+.detail-content {
+    /* background-color: aqua; */
+    height: 100%;
+    width: 100%;
+    margin-left: 244px;
+    display: flex;
+    justify-content: center;
+}
+
+.detail {
+    width: 935px;
+    height: auto;
+    /* background-color: #d62976; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-content .pfpBG {
+    width: 150px; /* agak besar biar muat padding */
+    height: 150px;
+    padding: 3px;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-content .pfpBG::before {
+    content: '';
+    width: 140px;
+    height: 140px;
+    background: url(assets/yunatown.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.pfp-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 283.656px;
+    height: inherit;
+    /* background-color: aliceblue; */
+    margin-right: 28px;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.username svg {
+    margin-top: 4px;
+}
+
+.detail-top {
+    display: flex;
+    width: inherit;
+    height: 217px;
+    /* background-color: #4f5bd5; */
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(115, 115, 115, 0.219);
+}
+
+.detail-info {
+    display: flex;
+    align-items: center; /* <-- tambah ini */
+    flex-direction: column;
+    justify-content: space-evenly;
+    width:  623.344px;
+}
+.detail-info-top {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.btn-top {
+    display: flex;
+    gap:  8px;
+}
+
+.folBTN {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(239, 239, 239);
+    font-weight: 500;
+}
+
+.fol-info span:first-child {
+    font-weight: 500;
+}
+
+.detail-info-mid {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    /* justify-content: space-between; */
+    /* background-color: #4f5bd5; */
+}
+
+.detail-bio {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    /* background-color: #4f5bd5; */
+}
+
+.fol-mutual {
+    width: inherit;
+    font-size: 12px;
+}
+
+.detail-nav {
+    display: flex;
+    gap: 60px;
+    width: inherit;
+    justify-content: center;
+}
+
+.detail-nav-icon {
+    padding: 15px 0;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: 1px;
+}
+
+.feed-ig {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    /* background-color: #962fbf; */
+    justify-items: center; /* Opsional */
+    align-items: center;   /* Opsional */
+    width: 100%;
+    height: 100%;
+}
+
+.img-wrapper {
+    background-image: url('../assets/yunablonde.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 410.219px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
