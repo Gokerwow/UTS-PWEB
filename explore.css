@@ -11,59 +11,108 @@
     display: flex;
     justify-content: center;
     background-color: #fafafa;
+    /* background-color: red; */
     margin-left: 244px;
-    width: 100%;
+    width: calc(100% - 244px);
 }
 
 /* Grid Layout */
-.explore-grid {
-    display: grid;
-    grid-template-columns: repeat(3,  316.984px); /* 3 Kolom */
-    grid-auto-rows:  316.984px; /* Tinggi Default */
-    gap: 5px;
-    max-width: 935px; /* Lebar Maksimal Instagram */
-    width: 100%;
-    grid-auto-flow: dense; /* Isi Celah Kosong */
-    /* background-color: aqua; */
+.container {
+    padding-top: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: auto;
+    /* background-color: red; */
 }
 
-.line-top {
-    position: fixed;
-    height: 24px;
-    width: 100%;
-    background-color: #fafafa;
-    z-index: 90;
+.explore-container {
+    display: flex;
+    gap: 4px;
+    height: auto; /* Height for 2 images + gap */
+    /* background-color: blue; */
+    margin-bottom: 4px;
+    overflow: hidden
 }
 
-/* Grouping (Tanpa Mengacaukan Grid) */
-.feed-group {
-    display: contents; /* Anak-anak langsung masuk grid parent */
+.left-column {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    /* background-color: chocolate; */
 }
 
-/* Gambar Panjang di Kanan */
-.right-group .span-2-rows {
-    grid-column: 3; /* Kolom Terakhir */
+.right-column {
+    flex: 1;
+    /* background-color: chocolate; */
+
 }
 
-/* Gambar Panjang di Kiri */
-.left-group .span-2-rows {
-    grid-column: 1; /* Kolom Pertama */
-}
-
-/* Style Gambar */
-.img-wrapper-explore {
+.small-item {
+    flex-basis: calc(50% - 2px); /* 50% width minus half of the gap */
+    aspect-ratio: 1/1;
+    background-color: #fff;
+    border-radius: 3px;
     overflow: hidden;
-    /* border-radius: 8px; */
-    background-color: #eee; /* Warna Placeholder */
+    height: 50%;
+    position: relative;
 }
 
-.img-wrapper-explore img {
+.big-item {
+    height: calc(100% + 4px);
+    /* background-color: aqua; */
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Gambar Tidak Distorsi */
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Gambar 2 Baris */
-.span-2-rows {
-    grid-row: span 2;
+.small-item:hover img, .big-item:hover img {
+    transform: scale(1.05);
+}
+.small-item:hover .overlay {
+    display: flex;
+}
+
+.big-item:hover .overlay {
+    display: flex;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #262626;
+}
+
+@media (max-width: 1265px) {
+    .explore-content {
+        margin-left: 72px;
+        width: calc(100% - 72px);
+    }
+}
+
+@media (max-width: 1125px) {
+    .right-bar  {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .explore-content {
+        margin-top: 50px;
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+    }
 }
